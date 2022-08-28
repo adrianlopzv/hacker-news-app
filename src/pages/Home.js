@@ -9,7 +9,7 @@ export default function Home() {
             <All/>
             <Dropdown/>
             <div className={news.news__maincontainer}>
-                <News/><News/><News/><News/>
+                <News/>
             </div>
         </div>
     )

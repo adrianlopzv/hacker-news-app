@@ -1,0 +1,38 @@
+:root {
+    --grey-select: #eaeaea;
+    --grey-fav: #f7f7f7;
+  }
+
+.fav_container {
+    width: 90px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: var(--grey-fav);
+    cursor: pointer;
+  }
+  
+  .fav_container:hover {
+    background-color: var(--grey-select)
+  }
+  
+  .heart_empty {
+    background: url('./empty-heart.png') no-repeat;
+    background-size: 35px;
+    width: 40px; height: 40px;
+    opacity: 0.7;
+  }
+  
+  .heart_fully {
+    background: url('./heart-full.png') no-repeat;
+    background-size: 35px;
+    width: 40px; height: 40px;
+  }
+  
+  @media screen and (max-width:680px) {
+    .heart{
+      width: 25px;
+    }
+  }

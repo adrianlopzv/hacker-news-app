@@ -2,6 +2,7 @@
   --font-main: #828282;
   --grey-select: #eaeaea;
   --grey-strong: #6b6b6b;
+  --grey-darkk:#5b5b5b;
   --grey-fav: #f7f7f7;
   --roboto-font: "Roboto", sans-serif;
   --font-11px: 0.688rem;
@@ -21,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   width: auto;
-  height: 90px;
+  height: auto;
   margin-top: 30px;
   margin-right: 20px;
   padding: 0 0 0 26px;
@@ -41,8 +42,14 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 450px;
-  height: 90px;
+  height: auto;
   padding: 15px 40px 20px 0px;
+}
+
+.news_title {
+  font-size: 1.2rem;
+  color: black;
+  margin-top: 8px;
 }
 
 .news_p {
@@ -50,6 +57,12 @@
   font-weight: 500;
   color: var(--grey-strong);
   margin: 10px 0px;
+  line-height: 1rem;
+}
+
+.news_author {
+  font-weight: 600;
+  color: var(--grey-darkk);
 }
 
 .card__timeinfo {
@@ -64,20 +77,6 @@
   margin-right: 7px;
 }
 
-.fav_container {
-  width: 90px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  background-color: var(--grey-fav);
-}
-
-.heart {
-  width: 32px;
-  cursor: pointer;
-}
 
 @media screen and (max-width:785px) {
     .card__container {

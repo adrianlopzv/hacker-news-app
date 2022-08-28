@@ -1,7 +1,8 @@
 import news from './news.module.css'
+import Heart from '../heart/Heart'
 
-export default function News() {
-    
+export default function News({results = []}) {
+
     return(
     <div className={news.news__card}>
         <div className={news.card__container}>
@@ -11,17 +12,12 @@ export default function News() {
                  src={require('./clock-icon.png')}
                  alt="Clock icon"/><span>3hs de gil</span>
              </div>
-            <p className={news.news_p}>Yo estoy puesto pa ti y tu te me quita, diablo, que piquete la chamakita</p>
+             <h3 className={news.news_title}>Esto es un titulo muy feo</h3>
+            <p className={news.news_p}>
+                Yo estoy puesto pa ti y tu te me quita, diablo, que piquete la chamakita, el corazon lo puso en la neverita si el coso se arma, se queda solita pero esto sigue, veremos que pasa, por favor que no se rompaaa</p>
+                <h5 className={news.news_author}>by El Autor ESTO</h5>
         </div>
-        <div className={news.fav_container}>
-            <span>
-                <img
-                className={news.heart}
-                src={require('./empty-heart.png')}
-                // src={require('./heart-full.png')} 
-                alt="Favourite icon"/>
-            </span>
-        </div>
+        <Heart/>
     </div>
     
     )
