@@ -1,0 +1,22 @@
+.header_nav {
+    padding: 30px 100px;
+    width: 100%;
+    box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+    background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+  }
+  
+  .nav_logo {
+    width: 120px; height: auto;
+  }
+
+  @media screen and (max-width:785px) {
+    .header_nav {
+      padding: 20px 0px 20px 50px;
+    }
+  }
+
+  @media screen and (max-width:680px) {
+    .header_nav {
+      padding: 20px 0px 20px 30px;
+    }
+  }
