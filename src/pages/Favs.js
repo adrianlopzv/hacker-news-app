@@ -7,7 +7,7 @@ export default function Favs() {
         <div>
             <Myfavs/>
             <div className={news.news__maincontainer}>
-                
+
             </div>
         </div>
     )

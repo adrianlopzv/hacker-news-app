@@ -49,7 +49,12 @@
 .news_title {
   font-size: 1.2rem;
   color: black;
-  margin-top: 8px;
+  margin-top: 10px;
+}
+
+.no_a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .news_p {
@@ -62,6 +67,7 @@
 
 .news_author {
   font-weight: 600;
+  margin-top: 15px;
   color: var(--grey-darkk);
 }
 

@@ -1,24 +1,38 @@
 import news from './news.module.css'
 import Heart from '../heart/Heart'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
-export default function News({results = []}) {
+export default function News({results}) {
 
     return(
-    <div className={news.news__card}>
-        <div className={news.card__container}>
+    <>
+    <InfiniteScroll 
+    dataLength={results.length} 
+    next={() => setPage (page + 1)}
+    hasMore={true} 
+    style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}
+    scrollableTarget="scrollableDiv">
+    {   results.map(item => (
+        <div key={item.created_at_i} className={news.news__card}>
+        <a href={item.story_url} 
+        target="_blank" className={news.no_a}>
+            <div className={news.card__container}>
             <div className={news.card__timeinfo}>
                  <img
                  className={news.clock_img} 
                  src={require('./clock-icon.png')}
-                 alt="Clock icon"/><span>3hs de gil</span>
+                 alt="Clock icon"/><span>{item.created_at}</span>
              </div>
-             <h3 className={news.news_title}>Esto es un titulo muy feo</h3>
-            <p className={news.news_p}>
-                Yo estoy puesto pa ti y tu te me quita, diablo, que piquete la chamakita, el corazon lo puso en la neverita si el coso se arma, se queda solita pero esto sigue, veremos que pasa, por favor que no se rompaaa</p>
-                <h5 className={news.news_author}>by El Autor ESTO</h5>
+             <h3 className={news.news_title}>
+                {item.story_title}</h3>
+                <h5 className={news.news_author}>by {item.author}</h5>
         </div>
+        </a>
         <Heart/>
-    </div>
-    
+        </div>
+        ))
+        }
+        </InfiniteScroll>
+    </>
     )
 }
