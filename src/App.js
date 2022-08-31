@@ -80,15 +80,7 @@ export default function App() {
      }
 
      useEffect(() => {
-      // if(!techs.angular){
-      //   searchAngular()
-      // } else if (!techs.react) {
-      //   searchReact()
-      // } else if (!techs.vuejs) {
-      //   searchVuejs()
-      // } else{
       searchByDate()
-      console.log(techs.angular, techs.react, techs.search)
       } 
      ,[techs])
 
@@ -101,7 +93,18 @@ export default function App() {
             <button className={dropdown.drop_btn}>
                 <span 
                 className={dropdown.btn__text}>
-                    Select your news
+                  {techs.search && (
+                    "Select your news"
+                  )}
+                  {techs.angular && (
+                    <Angular/>
+                  )}
+                  {techs.react && (
+                    <React/>
+                  )}
+                  {techs.vuejs && (
+                    <Vuejs/>
+                  )}
                 </span>
                 <span className={dropdown.btn__icon}>
                 <img className={dropdown.arrow_img} 
