@@ -1,18 +1,15 @@
 import heart from './heart.module.css'
 import React from 'react'
 
-export default function Heart() {
+export default function Heart({liked, onClick}) {
     
-    const [state, setLike] = React.useState(false)
-
-    const onLike = () => setLike(!state)
 
     return(
         <div 
-        onClick={onLike}
+        onClick={onClick}
         className={heart.fav_container}>
-            <span className={
-                state ? heart.heart_fully : heart.heart_empty}>
+            <span 
+            className={liked ? heart.heart_fully : heart.heart_empty}>
             </span>
         </div>
     )

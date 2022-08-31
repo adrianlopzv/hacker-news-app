@@ -3,13 +3,21 @@ import {Route, Routes} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import Home from './pages/Home';
 import News from './components/news/News';
+import Heart from './components/heart/Heart';
 import Angular from './components/dropdown/Angular';
 import React from './components/dropdown/React';
 import Vuejs from './components/dropdown/Vuejs';
 import dropdown from './components/dropdown/dropdown.module.css'
 
+// const Fav = ({ onFav }) => {
+//   return (
+//     <div onClick={onFav}></div>
+//   )
+// }
+
 export default function App() {
     const [results, setResults] = useState([])
+    const [favourites, setFavourites] = useState({})
     const [techs, setTech] = useState({
       search: true,
       angular: false,
@@ -27,24 +35,40 @@ export default function App() {
       const posts = await data.json()
       setResults(posts.hits)
     }
-
     const searchAngular = async () => {
       const data = await fetch(angularUrl)
       const posts = await data.json()
       setResults(posts.hits)
     }
-
     const searchReact = async () => {
       const data = await fetch(reactUrl)
       const posts = await data.json()
       setResults(posts.hits)
     }
-
     const searchVuejs = async () => {
       const data = await fetch(vuejsUrl)
       const posts = await data.json()
       setResults(posts.hits)
     }
+
+  //Leo dice: dos use 1 lee locaslS -string favourites, 
+  // 2 use efect [vacio], strig pa guardar
+  // 
+
+    console.log('FAVORITESS', favourites)
+
+    const onFav = (itemId, liked) => {
+      setFavourites({
+      ...favourites,
+        [itemId]: liked,
+      })
+      console.log('Leoasdasdsd', itemId, liked)
+    }
+
+      // useEffect(() => {
+
+      // }[])
+
   
      const angularNews = () => {
         setTech({
@@ -128,7 +152,11 @@ export default function App() {
             </div>
         </div>  
     </div>
-    <News results={results}/>
+    <News 
+    results={results} 
+    favourites={favourites}
+    onFav={onFav}
+    />
     </>
   )
 }
