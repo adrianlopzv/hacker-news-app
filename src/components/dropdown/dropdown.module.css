@@ -63,6 +63,7 @@
   width: auto;
   display: flex;
   align-content: center;
+  cursor: pointer;
 }
 
 .content_a {

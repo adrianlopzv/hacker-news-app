@@ -1,5 +1,6 @@
 import myfavs from './myfavs.module.css'
 import {NavLink} from 'react-router-dom'
+import Home from '../../pages/Home'
 
 export default function Myfavs() {
     return(

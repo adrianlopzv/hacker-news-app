@@ -12,8 +12,9 @@ export default function News({results}) {
     hasMore={true} 
     style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}
     scrollableTarget="scrollableDiv">
+        <div className={news.news__maincontainer}>
     {   results.map(item => (
-        <div key={item.created_at_i} className={news.news__card}>
+        <div key={item.objectID} className={news.news__card}>
         <a href={item.story_url} 
         target="_blank" className={news.no_a}>
             <div className={news.card__container}>
@@ -32,6 +33,7 @@ export default function News({results}) {
         </div>
         ))
         }
+        </div>
         </InfiniteScroll>
     </>
     )

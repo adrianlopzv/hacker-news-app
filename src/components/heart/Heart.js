@@ -5,7 +5,6 @@ export default function Heart() {
     
     const [state, setLike] = React.useState(false)
 
-    console.log(state)
     const onLike = () => setLike(!state)
 
     return(
