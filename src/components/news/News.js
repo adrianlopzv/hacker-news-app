@@ -1,5 +1,4 @@
 import news from './news.module.css'
-import InfiniteScroll from 'react-infinite-scroll-component'
 import Heart from '../heart/Heart'
 
 export default function News({results, onFav, favourites}) {
@@ -7,12 +6,6 @@ export default function News({results, onFav, favourites}) {
 
     return(
     <>
-    <InfiniteScroll 
-    dataLength={results.length} 
-    next={() => setPage (page + 1)}
-    hasMore={true} 
-    style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}
-    scrollableTarget="scrollableDiv">
         <div className={news.news__maincontainer}>
     {   results.map(item => (
         <div key={item.objectID} className={news.news__card}>
@@ -37,7 +30,6 @@ export default function News({results, onFav, favourites}) {
         ))
         }
         </div>
-        </InfiniteScroll>
     </>
     )
 }

@@ -9,11 +9,6 @@ import React from './components/dropdown/React';
 import Vuejs from './components/dropdown/Vuejs';
 import dropdown from './components/dropdown/dropdown.module.css'
 
-// const Fav = ({ onFav }) => {
-//   return (
-//     <div onClick={onFav}></div>
-//   )
-// }
 
 export default function App() {
     const [results, setResults] = useState([])
@@ -51,9 +46,6 @@ export default function App() {
       setResults(posts.hits)
     }
 
-  //Leo dice: dos use 1 lee locaslS -string favourites, 
-  // 2 use efect [vacio], strig pa guardar
-  // 
 
     console.log('FAVORITESS', favourites)
 
@@ -65,9 +57,6 @@ export default function App() {
       console.log('Leoasdasdsd', itemId, liked)
     }
 
-      // useEffect(() => {
-
-      // }[])
 
   
      const angularNews = () => {
@@ -112,7 +101,8 @@ export default function App() {
     <>
     <Routes>
        <Route index element={<Home/>}/>
-    </Routes> <div className={dropdown.dropmenu__container}>
+    </Routes> 
+    <div className={dropdown.dropmenu__container}>
         <div className={dropdown.dropdown_menu}>
             <button className={dropdown.drop_btn}>
                 <span 
@@ -150,7 +140,8 @@ export default function App() {
                 <Vuejs/>
                 </span>
             </div>
-        </div>  
+        
+      </div>  
     </div>
     <News 
     results={results} 
